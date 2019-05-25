@@ -269,7 +269,7 @@ void RtxApp::LoadSceneGeometry() {
     String baseDir = fileName;
     const size_t slash = baseDir.find_last_of('/');
     if (slash != String::npos) {
-        baseDir.erase(slash);
+        baseDir.erase(slash + 1);
     }
 
 
