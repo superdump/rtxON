@@ -45,3 +45,6 @@ ipch/
 
 # Compiled shaders
 _data/shaders/*.bin
+
+# CMake build dir
+build/
