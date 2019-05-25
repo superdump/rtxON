@@ -263,7 +263,7 @@ void RtxApp::LoadSceneGeometry() {
     tinyobj::attrib_t attrib;
     std::vector<tinyobj::shape_t> shapes;
     std::vector<tinyobj::material_t> materials;
-    String warn, error;
+    String error;
 
     String fileName = sScenesFolder + "fake_whitted/fake_whitted.obj";
     String baseDir = fileName;
@@ -272,7 +272,9 @@ void RtxApp::LoadSceneGeometry() {
         baseDir.erase(slash);
     }
 
-    const bool result = tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &error, fileName.c_str(), baseDir.c_str(), true);
+
+
+    const bool result = tinyobj::LoadObj(&attrib, &shapes, &materials, &error, fileName.c_str(), baseDir.c_str(), true);
     if (result) {
         mScene.meshes.resize(shapes.size());
         mScene.materials.resize(materials.size());
